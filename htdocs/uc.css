@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* c.f. https://www.uc.edu/about/marketing-communications/brand-guide/visual-identity/typography.html */
+  --typeface-uc-sans: "Open Sans", sans-serif;
+  --typeface-uc-serif: "Gentium Book Plus", serif;
+  --typeface-uc-header: Jost, sans-serif;
+  --typeface-system: system-ui, sans-serif;
+  --typeface-monospaced: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+
+  /* c.f. https://www.uc.edu/about/marketing-communications/brand-guide/visual-identity/color.html */
+  --uc-red: #e00122;
+  --uc-black: #000000;
+  --white: #ffffff;
+  --uc-dark-red: #b8011c;
+  --grey: #f3f3f3;
+  --calhoun-maroon: #890519;
+  --steger-silver: #a7a5aa;
+  --main-street-mist: #e0dfe3;
+  --bearcats-black: #333333;
+  --gettler-gold: #d1b179;
+  --tangeman-tan: #eadbc1;
+}
