@@ -7,19 +7,38 @@
   <link rel="stylesheet" href="uc.css">
   <title>Center for Health Informatics Asset Library</title>
   <style>
+    @import url("./fonts/atkinson.css");
+    body { background-color: var(--white); color: var(--bearcats-black); font-family: var(--typeface-system); font-variant-numeric: oldstyle-nums proportional-nums; text-rendering: optimizeLegibility; }
     th, td { padding: 0.5em; }
     table { margin-bottom: 2rem; min-width: 36rem; }
     th { text-align: left; font-weight: normal; }
     caption { text-align: left; }
+    code { font-family: var(--typeface-monospaced); font-size: smaller; color: var(--steger-silver); }
+    caption code { padding-left: 2em; }
   </style>
 </head>
 
-<body style="background-color: var(--white); color: var(--bearcats-black); font-family: var(--typeface-system); font-variant-numeric: oldstyle-nums proportional-nums;">
+<body>
   <h1>Asset Library</h1>
 
   <h2>Fonts</h2>
   <table>
-    <caption>Open Sans <span style="font-family: var(--typeface-monospaced); font-size: smaller; color: var(--steger-silver); padding-left: 2em;">font-family: var(--typeface-uc-sans);</span></caption>
+    <caption>Atkinson Hyperlegible <code>@import url("…/assets/fonts/atkinson.css");</code></caption>
+    <thead>
+      <tr>
+      <th></th>
+      <th style="font-style: normal;">Roman</th>
+      <th style="font-style: italic;">Italic</th>
+    </tr>
+    <tbody>
+      <tr><th>400 Regular</th><td style="font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 400;">400 Regular Roman</td><td style="font-family: 'Atkinson Hyperlegible'; font-style: italic; font-weight: 400;">400 Regular Italic</td></tr>
+      <tr><th>700 Bold</th><td style="font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 700;">700 Bold Roman</td><td style="font-family: 'Atkinson Hyperlegible'; font-style: italic; font-weight: 700;">700 Bold Italic</td></tr>
+    </tbody>
+  </thead>
+  </table>
+
+  <table>
+    <caption>Open Sans <code>font-family: var(--typeface-uc-sans);</code></caption>
     <thead>
       <tr>
       <th></th>
@@ -38,7 +57,7 @@
   </table>
 
   <table>
-    <caption>Jost <span style="font-family: var(--typeface-monospaced); font-size: smaller; color: var(--steger-silver); padding-left: 2em;">font-family: var(--typeface-uc-header);</span></caption>
+    <caption>Jost <code>font-family: var(--typeface-uc-header);</code></caption>
     <thead>
       <tr>
       <th></th>
@@ -60,7 +79,7 @@
   </table>
 
   <table>
-    <caption>Gentium Book Plus <span style="font-family: var(--typeface-monospaced); font-size: smaller; color: var(--steger-silver); padding-left: 2em;">font-family: var(--typeface-uc-serif);</span></caption>
+    <caption>Gentium Book Plus <code>font-family: var(--typeface-uc-serif);</code></caption>
     <thead>
       <tr>
       <th></th>

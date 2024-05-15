@@ -8,7 +8,7 @@
   --typeface-uc-serif: "Gentium Book Plus", serif;
   --typeface-uc-header: Jost, sans-serif;
   --typeface-system: system-ui, sans-serif;
-  --typeface-monospaced: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --typeface-monospaced: ui-monospace, monospace;
 
   /* c.f. https://www.uc.edu/about/marketing-communications/brand-guide/visual-identity/color.html */
   --uc-red: #e00122;
