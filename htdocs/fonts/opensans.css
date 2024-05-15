@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Light.ttf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-LightItalic.ttf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Italic.ttf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Medium.ttf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-MediumItalic.ttf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Semibold.ttf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src:  url("OpenSans-SemiboldItalic.ttf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Bold.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src:  url("OpenSans-BoldItalic.ttf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-ExtraBold.ttf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src:  url("OpenSans-ExtraBoldItalic.ttf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: normal;
+}

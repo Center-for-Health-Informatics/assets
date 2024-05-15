@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="uc.css">
   <title>Center for Health Informatics Asset Library</title>
   <style>
     @import url("./fonts/atkinson.css");
+    @import url("./fonts/opensans.css");
+    @import url("./uc.css");
     body { background-color: var(--white); color: var(--bearcats-black); font-family: var(--typeface-system); font-variant-numeric: oldstyle-nums proportional-nums; text-rendering: optimizeLegibility; }
     th, td { padding: 0.5em; }
     table { margin-bottom: 2rem; min-width: 36rem; }
@@ -20,6 +21,17 @@
 
 <body>
   <h1>Asset Library</h1>
+
+  <table style="font-family: 'Open Sans';">
+    <caption>font-variant-numeric</caption>
+    <thead>
+      <tr><th></th><th>oldstyle-nums</th><th>lining-nums</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>proportional-nums</th><td style="font-variant-numeric: proportional-nums oldstyle-nums;">0123456789</td><td style="font-variant-numeric:proportional-nums lining-nums;">0123456789</td></tr>
+      <tr><th>tabular-nums</th><td style="font-variant-numeric: tabular-nums oldstyle-nums;">0123456789</td><td style="font-variant-numeric: tabular-nums lining-nums;">0123456789</td></tr>
+    </tbody>
+  </table>
 
   <h2>Fonts</h2>
   <table>
