@@ -1,0 +1,14 @@
+/* c.f. https://www.uc.edu/about/marketing-communications/brand-guide/visual-identity/color.html */
+:root {
+  --uc-red: #e00122;
+  --uc-black: #000000;
+  --white: #ffffff;
+  --uc-dark-red: #b8011c;
+  --grey: #f3f3f3;
+  --calhoun-maroon: #890519;
+  --steger-silver: #a7a5aa;
+  --main-street-mist: #e0dfe3;
+  --bearcats-black: #333333;
+  --gettler-gold: #d1b179;
+  --tangeman-tan: #eadbc1;
+}
