@@ -1,0 +1,118 @@
+@import url("./fonts/opensans.css");
+
+html {
+  height: 100%;
+}
+
+body {
+  color: rgb(243, 243, 243);
+  background-color: rgb(51, 51, 51);
+  background-image: url("./care_crawley.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  font: 14px / 20px "Open Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 32rem;
+  background-color: rgba(0,0,0,0.8);
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 2rem;
+}
+
+header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+header svg {
+  height: 5rem;
+  width: auto;
+  fill: rgb(255, 255, 255);
+}
+
+aside {
+  background: rgb(242, 222, 222);
+  border: 0.8px solid rgb(235, 204, 209);
+  border-radius: 4px;
+  color: rgb(169, 68, 66);
+  padding: 15px;
+}
+
+h1, h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: rgb(255, 255, 255);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0.25em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+input, button {
+  font: 18px / 24px "Open Sans", sans-serif;
+  height: 3rem;
+  border-radius: 6px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+input {
+  border: 2px solid rgb(221, 221, 221);
+  color: rgb(85, 85, 85);
+  padding: 3px 0px 3px 15px;
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset;
+}
+
+button {
+  background: rgb(224, 1, 34);
+  border: 0.8px solid rgba(0, 0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 10px 0px;
+}
+
+button:hover {
+  background: rgb(236, 3, 38);
+}
+
+button:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px 0px inset;
+}
