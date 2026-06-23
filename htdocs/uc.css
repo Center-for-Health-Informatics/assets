@@ -1,13 +1,13 @@
-@import url("./fonts/opensans.css");
+@import url("./fonts/gentium.css");
 @import url("./fonts/jost.css");
-@import url("./fonts/gentiumbook.css");
+@import url("./fonts/opensans.css");
 @import url("./uccolor.css");
 
 /* c.f. https://www.uc.edu/about/marketing-communications/brand-guide/visual-identity/typography.html */
 :root {
-  --typeface-uc-sans: "Open Sans", sans-serif;
-  --typeface-uc-serif: "Gentium Book Plus", serif;
+  --typeface-uc-serif: "Gentium", serif;
   --typeface-uc-header: "Jost", sans-serif;
+  --typeface-uc-sans: "Open Sans", sans-serif;
   --typeface-system: system-ui, sans-serif;
   --typeface-monospaced: ui-monospace, monospace;
 }

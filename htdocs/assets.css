@@ -1,0 +1,182 @@
+@import url("./fonts/atkinson.css");
+@import url("./fonts/atkinson-next.css");
+@import url("./fonts/atkinson-mono.css");
+@import url("./uc.css");
+
+body {
+  background-color: var(--white);
+  color: var(--bearcats-black);
+  font-family: var(--typeface-system);
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+}
+
+th,
+td {
+  padding: 0.5em;
+}
+
+table {
+  margin-bottom: 2rem;
+  min-width: 36rem;
+}
+
+th {
+  text-align: left;
+  font-weight: normal;
+}
+
+caption {
+  text-align: left;
+}
+
+code {
+  font-family: var(--typeface-monospaced);
+  font-size: smaller;
+  color: var(--steger-silver);
+}
+
+caption code {
+  padding-left: 2em;
+}
+
+.hidden {
+  display: none;
+}
+
+.opensans {
+  font-family: 'Open Sans';
+}
+
+.gentium {
+  font-family: 'Gentium';
+}
+
+.jost {
+  font-family: 'Jost';
+}
+
+.systemui {
+  font-family: system-ui;
+}
+
+.monospace {
+  font-family: ui-monospace;
+}
+
+.atkinson {
+  font-family: 'Atkinson Hyperlegible';
+}
+
+.atkinson-next {
+  font-family: 'Atkinson Hyperlegible Next';
+}
+
+.atkinson-mono {
+  font-family: 'Atkinson Hyperlegible Mono';
+}
+
+.proportional.oldstyle {
+  font-variant-numeric: proportional-nums oldstyle-nums;
+}
+
+.proportional.lining {
+  font-variant-numeric: proportional-nums lining-nums;
+}
+
+.tabular.oldstyle {
+  font-variant-numeric: tabular-nums oldstyle-nums;
+}
+
+.tabular.lining {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.roman {
+  font-style: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.extralight {
+  font-weight: 200;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.extrabold {
+  font-weight: 800;
+}
+
+.black {
+  font-weight: 900;
+}
+
+section header {
+  margin-bottom: 2rem;
+}
+
+section header nav {
+  margin-top: 1rem;
+}
+
+section header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+section header nav ul li {
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--grey);
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5rem;
+}
+
+section header nav ul li:hover {
+  color: var(--uc-black);
+  background-color: var(--tangeman-tan);
+  cursor: pointer;
+}
+
+section header nav ul li.selected, section header nav ul li.selected:hover {
+  color: var(--grey);
+  background-color: var(--bearcats-black);
+  cursor: default;
+}
