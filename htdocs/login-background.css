@@ -1,0 +1,20 @@
+/* The CHI sign-in page's ground: the photograph, and the dark field behind it.
+
+   Its own stylesheet, separate from login.css, so an app can link it from its
+   configurable assets base URL and let the relative url() below resolve inside this
+   library — a stylesheet served from the app cannot name the photograph without
+   hard-coding this host, and an app served from several hostnames has no one right
+   host to name. c.f. chi_auth issue #64.
+
+   login.css is the whole sign-in design, layout and form included, and stays that
+   way for the apps already linking it. This file is only the ground, for an app that
+   brings its own layout. */
+
+body {
+  background-color: #333333;  /* --bearcats-black, spelled out: this file stands alone */
+  background-image: url("./care_crawley.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
