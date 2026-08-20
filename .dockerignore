@@ -1,0 +1,6 @@
+.git
+.envrc
+README.md
+LICENSE
+etc/
+build.sh
