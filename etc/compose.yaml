@@ -1,0 +1,25 @@
+name: "assets"
+services:
+  nginx:
+    # Matches the tag build.sh pushes (${REGISTRY:-chi-tools.uc.edu}/assets).
+    image: chi-tools.uc.edu/assets:latest
+    pull_policy: always
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ:-America/New_York}
+    ports:
+      # Private VM network only. A port published on the host's enterprise address is
+      # reachable from all of 10.0.0.0/8, which bypasses every control chi-hermes applies.
+      # BIND_ADDRESS has no default on purpose: unset must abort, not bind 0.0.0.0.
+      #
+      # HTTP_PORT is guarded too: unset it interpolates to empty and yields a malformed
+      # mapping rather than aborting. It is also not free to choose — chi-hermes'
+      # proxy_pass hard-codes it. See etc/example.containers.env.
+      - ${BIND_ADDRESS:?set BIND_ADDRESS in .env to this host's private address}:${HTTP_PORT:?set HTTP_PORT in .env to the port chi-hermes proxies to}:80
+    healthcheck:
+      # busybox wget, shipped in the alpine base — nothing extra is installed.
+      test: wget --spider --quiet http://localhost/index.html
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
