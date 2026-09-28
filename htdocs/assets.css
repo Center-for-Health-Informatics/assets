@@ -180,3 +180,105 @@ section header nav ul li.selected, section header nav ul li.selected:hover {
   background-color: var(--bearcats-black);
   cursor: default;
 }
+
+section#colors > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+section#colors > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--main-street-mist);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+section#colors .chip {
+  height: 6rem;
+  border-bottom: 1px solid var(--main-street-mist);
+}
+
+section#colors .label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  background-color: var(--grey);
+}
+
+section#colors .label .name {
+  font-weight: 600;
+}
+
+section#colors .label code {
+  color: var(--bearcats-black);
+}
+
+section#monogram,
+section#logo {
+  margin-bottom: 2rem;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.swatches figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--main-street-mist);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.swatches img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  padding: 1.5rem;
+  background-color: var(--white);
+}
+
+#monogram .swatches img {
+  aspect-ratio: 1;
+}
+
+.swatches figure.dark img {
+  background-color: var(--bearcats-black);
+}
+
+.swatches figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: var(--grey);
+}
+
+.swatches figcaption a {
+  text-decoration: none;
+}
+
+.swatches figcaption code {
+  color: var(--bearcats-black);
+  font-weight: normal;
+}
+
+.swatches figcaption a:hover code {
+  color: var(--uc-red);
+}

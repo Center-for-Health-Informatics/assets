@@ -20,7 +20,27 @@ function setFace (id) {
   }
 }
 
+function initColors () {
+  for (const li of document.querySelectorAll('section#colors > ul > li')) {
+    const name = li.textContent.trim()
+    const chip = document.createElement('div')
+    chip.className = 'chip'
+    chip.style.backgroundColor = `var(--${li.dataset.variable})`
+
+    const label = document.createElement('div')
+    label.className = 'label'
+    label.innerHTML = `<span class="name"></span><code class="hex"></code><code class="variable"></code>`
+    label.querySelector('.name').textContent = name
+    label.querySelector('.hex').textContent = `#${li.dataset.hex}`
+    label.querySelector('.variable').textContent = `var(--${li.dataset.variable})`
+
+    li.replaceChildren(chip, label)
+  }
+}
+
 function init () {
+  initColors()
+
   for (const li of document.querySelectorAll('section#fonts header nav ul li')) {
     Faces.set(li.dataset.face, {
       id: li.dataset.face,
