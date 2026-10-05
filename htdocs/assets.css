@@ -157,25 +157,36 @@ section header nav ul {
 }
 
 section header nav ul li {
-  font-weight: 600;
-  font-size: 0.8rem;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  background-color: var(--grey);
   flex: 1 1 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
   min-width: 5rem;
 }
 
-section header nav ul li:hover {
-  color: var(--uc-black);
-  background-color: var(--tangeman-tan);
+section header nav ul li button {
+  flex: 1 1 auto;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: inherit;
+  padding: 0.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--grey);
   cursor: pointer;
 }
 
-section header nav ul li.selected, section header nav ul li.selected:hover {
+section header nav ul li button:hover {
+  color: var(--uc-black);
+  background-color: var(--tangeman-tan);
+}
+
+section header nav ul li button:focus-visible {
+  outline: 2px solid var(--uc-red);
+  outline-offset: 2px;
+}
+
+section header nav ul li.selected button,
+section header nav ul li.selected button:hover {
   color: var(--grey);
   background-color: var(--bearcats-black);
   cursor: default;

@@ -44,7 +44,7 @@ function init () {
   for (const li of document.querySelectorAll('section#fonts header nav ul li')) {
     Faces.set(li.dataset.face, {
       id: li.dataset.face,
-      name: li.textContent,
+      name: li.textContent.trim(),
       weights: li.dataset.weights.split(' ').map(n => Number.parseInt(n)),
       styles: li.dataset.styles.split(' ')
     })
@@ -53,10 +53,13 @@ function init () {
       setFace(li.dataset.face)
     }
 
-    li.addEventListener('click', e => {
-      document.querySelector('section#fonts header nav ul li.selected').classList.remove('selected')
-      e.target.classList.add('selected')
-      setFace(e.target.dataset.face)
+    li.querySelector('button').addEventListener('click', () => {
+      const previous = document.querySelector('section#fonts header nav ul li.selected')
+      previous.classList.remove('selected')
+      previous.querySelector('button').setAttribute('aria-pressed', 'false')
+      li.classList.add('selected')
+      li.querySelector('button').setAttribute('aria-pressed', 'true')
+      setFace(li.dataset.face)
     })
   }
 }
