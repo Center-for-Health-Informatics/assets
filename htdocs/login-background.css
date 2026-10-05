@@ -8,12 +8,24 @@
 
    login.css is the whole sign-in design, layout and form included, and stays that
    way for the apps already linking it. This file is only the ground, for an app that
-   brings its own layout. */
+   brings its own layout.
+
+   The photograph is on a fixed pseudo-element rather than on body with
+   background-attachment: fixed, which every iOS browser treats as scroll (issue #11).
+   So the linking page must leave body::before alone, and must not make body a
+   stacking context (transform, filter, a z-index on a positioned body, …): either
+   would hide the photograph behind body's own background. */
 
 body {
   background-color: #333333;  /* --bearcats-black, spelled out: this file stands alone */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-image: url("./care_crawley.jpg");
-  background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
