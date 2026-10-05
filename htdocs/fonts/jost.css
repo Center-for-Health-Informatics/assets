@@ -1,143 +1,161 @@
 @font-face {
   font-family: "Jost";
-  src: url("Jost-Thin.ttf") format("opentype");
+  src: url("Jost-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-ThinItalic.ttf") format("opentype");
+  src: url("Jost-ThinItalic.woff2") format("woff2");
   font-weight: 100;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-ExtraLight.ttf") format("opentype");
+  src: url("Jost-ExtraLight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-ExtraLightItalic.ttf") format("opentype");
+  src: url("Jost-ExtraLightItalic.woff2") format("woff2");
   font-weight: 200;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-Light.ttf") format("opentype");
+  src: url("Jost-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-LightItalic.ttf") format("opentype");
+  src: url("Jost-LightItalic.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-Regular.ttf") format("opentype");
+  src: url("Jost-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-Italic.ttf") format("opentype");
+  src: url("Jost-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-Medium.ttf") format("opentype");
+  src: url("Jost-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-MediumItalic.ttf") format("opentype");
+  src: url("Jost-MediumItalic.woff2") format("woff2");
   font-weight: 500;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-SemiBold.ttf") format("opentype");
+  src: url("Jost-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src:  url("Jost-SemiBoldItalic.ttf") format("opentype");
+  src: url("Jost-SemiBoldItalic.woff2") format("woff2");
   font-weight: 600;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-Bold.ttf") format("opentype");
+  src: url("Jost-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src:  url("Jost-BoldItalic.ttf") format("opentype");
+  src: url("Jost-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-ExtraBold.ttf") format("opentype");
+  src: url("Jost-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src:  url("Jost-ExtraBoldItalic.ttf") format("opentype");
+  src: url("Jost-ExtraBoldItalic.woff2") format("woff2");
   font-weight: 800;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("Jost-Black.ttf") format("opentype");
+  src: url("Jost-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
-  src:  url("Jost-BlackItalic.ttf") format("opentype");
+  src: url("Jost-BlackItalic.woff2") format("woff2");
   font-weight: 900;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
