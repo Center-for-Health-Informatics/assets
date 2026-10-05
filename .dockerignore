@@ -4,3 +4,6 @@ README.md
 LICENSE
 etc/
 build.sh
+# macOS Finder metadata: git ignores it, but COPY htdocs/ would bake it in and nginx
+# would serve it — it was live at /assets/.DS_Store.
+**/.DS_Store

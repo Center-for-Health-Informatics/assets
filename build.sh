@@ -30,7 +30,10 @@ PLATFORMS=${PLATFORMS:-linux/amd64,linux/arm64}
 NAME=assets
 VERSION=$(<VERSION)
 REVISION=$(git rev-parse --short HEAD)
-git diff --quiet HEAD -- . || REVISION="${REVISION}-dirty"
+# Untracked files count: COPY htdocs/ ships them, so a clean `git diff` alone would label
+# an image holding a stray file with a commit that doesn't contain it. Ignored files are
+# kept out of the image by .dockerignore instead.
+[[ -z $(git status --porcelain -- .) ]] || REVISION="${REVISION}-dirty"
 
 IMAGE="${REGISTRY}/${NAME}"
 
