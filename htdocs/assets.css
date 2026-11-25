@@ -3,22 +3,150 @@
 @import url("./fonts/atkinson-mono.css");
 @import url("./uc.css");
 
+:root {
+  accent-color: var(--uc-red);
+  color-scheme: light dark;
+
+  --page-bg: light-dark(var(--white), #1c1c1e);
+  --text: light-dark(var(--bearcats-black), var(--grey));
+  --text-strong: light-dark(var(--uc-black), var(--white));
+  --subtle-bg: light-dark(var(--grey), #2a2a2d);
+  --rule: light-dark(var(--main-street-mist), #45454a);
+  --heading: light-dark(var(--calhoun-maroon), #f2667a);
+  --link-accent: light-dark(var(--uc-dark-red), #f2667a);
+  --muted: light-dark(#6b6970, var(--steger-silver));
+  --focus-ring: var(--link-accent);
+}
+
+/* one focus ring everywhere, rather than each browser's own on each colour */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* 16px at least: iOS zooms the page into any field smaller than that when it is focused */
+:is(input, select, textarea) {
+  font-size: max(1rem, 16px);
+}
+
 body {
-  background-color: var(--white);
-  color: var(--bearcats-black);
-  font-family: var(--typeface-system);
+  font-family: var(--typeface-uc-sans);
   font-variant-numeric: oldstyle-nums proportional-nums;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  background-color: var(--page-bg);
+  color: var(--text);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100svh;
+  row-gap: 3rem;
+
+  @media (prefers-color-scheme: light) {
+    font-weight: 400;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    font-weight: 500;
+  }
+
+  @media (width < 40rem) {
+    row-gap: 1.5rem;
+  }
+}
+
+body>header {
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  background-color: var(--bearcats-black);
+  color: var(--steger-silver);
+  text-box: trim-both cap alphabetic;
+
+  * {
+    text-box: inherit;
+  }
+
+  @media (width < 40rem) {
+    padding-inline: 0.75rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+    font-family: var(--typeface-uc-header);
+    margin: 0;
+    text-box: trim-both cap alphabetic;
+
+    @media (prefers-color-scheme: light) {
+      font-weight: 600;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      font-weight: 700;
+    }
+  }
+}
+
+body>main {
+  min-width: 0;
+  padding-inline: 2rem;
+  /* a URL or an address longer than a phone is wide breaks rather than overflowing;
+     break-word, not anywhere, so a table cell still sizes to its longest word */
+  overflow-wrap: break-word;
+
+  @media (width < 40rem) {
+    padding-inline: 1rem;
+  }
+
+  section+section {
+    margin-block: 2rem;
+  }
+
+  h2 {
+    color: var(--heading);
+    font-family: var(--typeface-uc-header);
+    font-size: 1.75rem;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.1rem;
+    margin: 0;
+    text-box: trim-both cap alphabetic;
+
+    @media (prefers-color-scheme: light) {
+      font-weight: 200;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      font-weight: 300;
+    }
+  }
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+
+  /* hover only where there is a pointer: on a touch screen it sticks after a tap */
+  @media (hover: hover) {
+    &:hover {
+      color: var(--text-strong);
+      background-color: var(--subtle-bg);
+      text-decoration: none;
+    }
+  }
 }
 
 th,
 td {
   padding: 0.5em;
+
+  /* tight enough that the widest font here still fits a 320px screen */
+  @media (width < 40rem) {
+    padding-inline: 0.2em;
+    font-size: 0.85rem;
+  }
 }
 
 table {
   margin-bottom: 2rem;
-  min-width: 36rem;
+  min-width: min(36rem, 100%);
 }
 
 th {
@@ -28,12 +156,28 @@ th {
 
 caption {
   text-align: left;
+  font-family: var(--typeface-uc-header);
+  font-size: 1.25rem;
+  font-variant-caps: all-small-caps;
+  /* letter-spacing: 0.1rem; */
+  margin-block-start: 1rem;
+  margin-inline: 0;
+  text-box: trim-both cap alphabetic;
+
+  @media (prefers-color-scheme: light) {
+    font-weight: 600;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    font-weight: 700;
+  }
+
 }
 
 code {
   font-family: var(--typeface-monospaced);
   font-size: smaller;
-  color: var(--steger-silver);
+  color: var(--muted);
 }
 
 caption code {
@@ -146,7 +290,7 @@ section header nav {
 
 section header nav ul {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   gap: 1rem;
   justify-content: space-between;
   align-items: stretch;
@@ -171,7 +315,7 @@ section header nav ul li button {
   padding: 0.75rem;
   border: 0;
   border-radius: 0.5rem;
-  background-color: var(--grey);
+  background-color: var(--subtle-bg);
   cursor: pointer;
 }
 
@@ -180,15 +324,10 @@ section header nav ul li button:hover {
   background-color: var(--tangeman-tan);
 }
 
-section header nav ul li button:focus-visible {
-  outline: 2px solid var(--uc-red);
-  outline-offset: 2px;
-}
-
 section header nav ul li.selected button,
 section header nav ul li.selected button:hover {
-  color: var(--grey);
-  background-color: var(--bearcats-black);
+  color: var(--page-bg);
+  background-color: var(--text);
   cursor: default;
 }
 
@@ -204,23 +343,24 @@ section#colors > ul {
 section#colors > ul > li {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--main-street-mist);
+  border: 1px solid var(--rule);
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
 section#colors .chip {
   height: 6rem;
-  border-bottom: 1px solid var(--main-street-mist);
+  border-bottom: 1px solid var(--rule);
 }
 
 section#colors .label {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  flex: 1;
   padding: 0.75rem;
   font-size: 0.8rem;
-  background-color: var(--grey);
+  background-color: var(--subtle-bg);
 }
 
 section#colors .label .name {
@@ -228,7 +368,7 @@ section#colors .label .name {
 }
 
 section#colors .label code {
-  color: var(--bearcats-black);
+  color: var(--text);
 }
 
 section#monogram,
@@ -246,7 +386,7 @@ section#logo {
   margin: 0;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--main-street-mist);
+  border: 1px solid var(--rule);
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -274,11 +414,13 @@ section#logo {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
+  align-content: start;
   gap: 0.5rem;
+  flex: 1;
   padding: 0.75rem;
   font-size: 0.8rem;
   font-weight: 600;
-  background-color: var(--grey);
+  background-color: var(--subtle-bg);
 }
 
 .swatches figcaption a {
@@ -286,10 +428,82 @@ section#logo {
 }
 
 .swatches figcaption code {
-  color: var(--bearcats-black);
+  color: var(--text);
   font-weight: normal;
 }
 
 .swatches figcaption a:hover code {
-  color: var(--uc-red);
+  color: var(--link-accent);
+}
+
+/* ── Footer ── */
+body > footer {
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  display: grid;
+  gap: 0.62rem;
+  grid-template-columns: [text-start] 1fr [text-end logo-start] auto [logo-end];
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  text-box: trim-both cap alphabetic;
+
+  * {
+    text-box: inherit;
+  }
+
+  .chi {
+    font-size: 1.38rem;
+    grid-column: text;
+  }
+
+  .orgs {
+    font-size: 0.8rem;
+  }
+
+  .university {
+    grid-column: logo;
+    grid-row: 1 / span 2;
+
+    svg {
+      height: 4rem;
+      width: auto;
+
+      .wordmark {
+        fill: var(--text-strong);
+      }
+
+      .monogram {
+        fill: var(--uc-red);
+      }
+    }
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  /* on a phone, the logo under the text rather than squeezing it */
+  @media (width < 40rem) {
+    padding-inline: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    .chi,
+    .university {
+      grid-column: 1;
+    }
+
+    /* a block, not inline: the footer's text-box trim cuts an inline logo's line down
+       to cap height, and the rest of the logo would ride up over the text above */
+    .university {
+      grid-row: auto;
+      margin-block-start: 0.5rem;
+
+      svg {
+        display: block;
+        height: 3rem;
+      }
+    }
+  }
 }
