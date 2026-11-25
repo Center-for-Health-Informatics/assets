@@ -12,7 +12,7 @@ No compose file needed — mount the working tree over the image's content for a
 live-editing loop:
 
 ```shell
-podman run --rm -p 8080:80 \
+container run --rm -p 8080:80 \
   -v ./htdocs:/usr/share/nginx/html:ro \
   -v ./nginx.conf:/etc/nginx/conf.d/default.conf:ro \
   nginx:1.30-alpine
@@ -26,12 +26,15 @@ line, nothing else. Bump it before tagging; `build.sh` reads it to tag the built
 
 ```shell
 ./build.sh              # build only, nothing leaves this machine
-PUSH=1 ./build.sh       # build and push all three tags to chi-tools.uc.edu
+PUSH=1 ./build.sh       # build, scan and push all three tags to chi-tools.uc.edu
 ```
 
-Pushing requires a one-time `podman login chi-tools.uc.edu`. Podman is required: the
-multi-arch build uses `podman build --manifest`, not docker buildx. A dirty working tree
-appends `-dirty` to the revision and refuses to push without `FORCE=1`.
+The build uses Apple's `container`. Pushing requires a one-time
+`container registry login chi-tools.uc.edu` (from a desktop terminal) and
+`skopeo login chi-tools.uc.edu`, plus trivy and syft: a push
+stops on fixable HIGH/CRITICAL findings (`SCAN=warn` overrides, once), and refuses a version
+that is already in the registry. A dirty working tree appends `-dirty` to the revision and
+refuses to push without `FORCE=1`.
 
 ### Testing a build before releasing it
 
